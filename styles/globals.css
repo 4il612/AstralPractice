@@ -58,6 +58,7 @@ body {
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: 0px 2px 2px rgb(177, 177, 177);
+  margin: 10px;
 }
 
 .CardLike{
@@ -68,4 +69,27 @@ body {
 .CardLike:hover{
   cursor: pointer;
   fill: rgb(81, 44, 44);
+}
+
+.hiddenBox{
+  position: absolute;
+  margin-left: 10px;
+  opacity: 0;
+}
+
+.hiddenBox:hover{
+  cursor: pointer;
+}
+
+.hiddenBox:hover~svg{
+  fill: rgb(81, 44, 44);
+}
+
+.hiddenBox:checked~svg{
+  fill:red;
+}
+
+.CardsWrapper{
+  display: flex;
+  padding: 10px;
 }
