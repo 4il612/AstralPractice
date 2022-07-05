@@ -6,11 +6,31 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.CardList{
+  color:aqua;
 }
 
-* {
-  box-sizing: border-box;
+.LoadBTNWrapper{
+  color:blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+
+.LoadBTN{
+  background: #1977D2;
+  color: #FFFFFF;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.LoadBTN:hover{
+  background: #1d6cba;
+}
+
+.LoadBTNWrapper:active .LoadBTN{
+  background: #13416e;
 }
