@@ -1,21 +1,10 @@
 import ButtonLoad from "../components/button"
-import React, { useState, useEffect } from 'react';
 
-const Cards = () => {
-  const [cards, setCards] = useState([]);
-  useEffect(() =>{
-    const getData = async () =>{
-      const response = await fetch('https://jsonplaceholder.typicode.com/photos')
-      const data = await response.json();
-      setCards(data);
-    }
-    getData();
-  }, [])
-
+const Cards = ({ cards }) => {
   return(
         <>
           <div className="CardsWrapper">
-              { !!cards.length && cards.slice(0, 3).map(res => {
+              { !!cards.length && cards.map(res => {
                 return(
                   <div className="CardWrapper">
                     <img className="CardImage" src={res.url}/>
@@ -36,6 +25,16 @@ const Cards = () => {
           <ButtonLoad/>
         </>
       )
+}
+
+export async function getServerSideProps(){
+  const response = await fetch('https://jsonplaceholder.typicode.com/photos')
+  const data = await response.json();
+  return {
+    props: {
+      cards: data.slice(0, 3)
+    }
+  }
 }
 
 export default Cards;
