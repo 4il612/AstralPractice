@@ -34,7 +34,7 @@ function Home(){
       <div className="CardsWrapper">
               { !!cards.length && cards.map(card => {
                   return(
-                  <div className="CardWrapper">
+                  <div className="CardWrapper" key={card.id}>
                     <img className="CardImage" src={card.url}/>
                     <div className="CardBody">
                         Дата добавления:
