@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "../node_modules/axios/index"
 import Card from "./cards/card"
+import LoadButton from "../components/loadbutton"
 
 const Home = () =>{
   const [cards, setCards] = useState([])
@@ -21,18 +22,15 @@ const Home = () =>{
   
   return (
     <>
-      <title>Cards</title>
-      <ul className="CardsWrapper">
-              { !!cards.length && cards.map(card => {
-                  return(
-                  <Card key={card.id} url={card.url} alt={card.title} id={card.id}/>
-              )})}
+        <title>Cards</title>
+        <ul className="CardsWrapper">
+            { !!cards.length && cards.map(card => {
+                return(
+                    <Card key={card.id} url={card.url} alt={card.title} id={card.id}/>
+                )
+            })}
         </ul>
-              <div className="LoadBTNWrapper">
-                <button onClick={() => setFetching(true)} id="loadBTN" className="LoadBTN">
-                 ЗАГРУЗИТЬ ЕЩЕ
-                </button>
-              </div>
+        <LoadButton func={() => setFetching(true)}/>     
     </>
     
   );
