@@ -1,10 +1,10 @@
 const ButtonLoad = () =>{
     return (
         <div className="LoadBTNWrapper">
-            <div className="LoadBTN">
-                ЗАГРУЗИТЬ ЕЩЕ
-            </div>
-        </div>
+                <button id="loadBTN" className="LoadBTN">
+                 ЗАГРУЗИТЬ ЕЩЕ
+                </button>
+              </div>
     )
 }
 
