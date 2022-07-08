@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "../node_modules/axios/index"
 import Card from "../components/card"
 import LoadButton from "../components/loadbutton"
+import Loader from "../components/loader"
 
 const Home = () =>{
   const [cards, setCards] = useState([])
@@ -10,13 +11,16 @@ const Home = () =>{
 
   useEffect(() => {
     if (fetching){
+      document.getElementById("Loader").style.display = 'block'
       axios.get('https://jsonplaceholder.typicode.com/photos?_limit=' + curLimit)
       .then(response => {
         setCards(response.data)
         setCurLimit(curLimit + 3)
-        console.log(response.data)
       })
-      .finally(() => setFetching(false))
+      .finally(() => {
+        setFetching(false)
+        document.getElementById("Loader").style.display = 'none'
+      })
     }
   }, [fetching])
   
@@ -30,7 +34,8 @@ const Home = () =>{
                 )
             })}
         </ul>
-        <LoadButton func={() => setFetching(true)}/>     
+        <Loader/>
+        <LoadButton func={() => {setFetching(true)}}/>     
     </>
     
   );

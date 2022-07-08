@@ -110,3 +110,9 @@ li{
   max-width: 600px;
   padding: 10px;
 }
+
+#Loader{
+  font-size: 4em;
+  text-align: center;
+  display: block;
+}
