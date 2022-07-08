@@ -36,7 +36,7 @@ function Home(){
       <ul className="CardsWrapper">
               { !!cards.length && cards.map(card => {
                   return(
-                  <Card url={card.url} alt={card.title} id={card.id}/>
+                  <Card key={card.id} url={card.url} alt={card.title} id={card.id}/>
               )})}
         </ul>
               <div className="LoadBTNWrapper">

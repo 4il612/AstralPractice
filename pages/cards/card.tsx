@@ -2,10 +2,11 @@ type Props = {
     url?: string
     alt?: string
     id?: string
+    key?: string
 }
 
-const Card = ({url = 'Image.jpg', alt='default alt', id='0'}:Props) => 
-    <li className="CardWrapper" key={id}>
+const Card = ({key="0", url='Image.jpg', alt='default alt', id='0'}:Props) => 
+    <li className="CardWrapper" key={key}>
     <img className="CardImage" src={url} alt={alt}/>
     <div className="CardBody">
         Дата добавления:
