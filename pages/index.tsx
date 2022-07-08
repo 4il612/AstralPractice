@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import axios from "axios"
+import axios from "../node_modules/axios/index"
 import Card from "./cards/card"
 
-function Home(){
+const Home = () =>{
   const [cards, setCards] = useState([])
   const [curLimit, setCurLimit] = useState(3)
   const [fetching, setFetching] = useState(true)
@@ -18,18 +18,7 @@ function Home(){
       .finally(() => setFetching(false))
     }
   }, [fetching])
-
-  useEffect(() => {
-    document.getElementById('loadBTN').addEventListener('click', btnHandler)
-    return function (){
-      document.getElementById('loadBTN').removeEventListener('click', btnHandler)
-    };
-  }, [])
-
-  const btnHandler = () =>{
-    setFetching(true)
-  }
-
+  
   return (
     <>
       <title>Cards</title>
@@ -40,7 +29,7 @@ function Home(){
               )})}
         </ul>
               <div className="LoadBTNWrapper">
-                <button id="loadBTN" className="LoadBTN">
+                <button onClick={() => setFetching(true)} id="loadBTN" className="LoadBTN">
                  ЗАГРУЗИТЬ ЕЩЕ
                 </button>
               </div>
@@ -49,4 +38,4 @@ function Home(){
   );
 }
 
-export default Home;
+export default Home
