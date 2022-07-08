@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "../node_modules/axios/index"
-import Card from "./cards/card"
+import Card from "../components/card"
 import LoadButton from "../components/loadbutton"
 
 const Home = () =>{
