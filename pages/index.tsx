@@ -12,7 +12,7 @@ const Home = () =>{
   useEffect(() => {
     if (fetching){
       document.getElementById("Loader").style.display = 'block'
-      axios.get('https://jsonplaceholder.typicode.com/photos?_limit=' + curLimit)
+      axios.get('https://astral-app-ns.herokuapp.com/api?limit=' + curLimit)
       .then(response => {
         setCards(response.data)
         setCurLimit(curLimit + 3)
@@ -30,7 +30,7 @@ const Home = () =>{
         <ul className="CardsWrapper">
             { !!cards.length && cards.map(card => {
                 return(
-                    <Card key={card.id} url={card.url} alt={card.title} id={card.id}/>
+                    <Card key={card.id} url={card.url} alt={card.alt} id={card.id} date={card.date}/>
                 )
             })}
         </ul>

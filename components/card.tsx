@@ -3,15 +3,16 @@ type Props = {
     alt?: string
     id?: string
     key?: string
+    date?: string
 }
 
-const Card = ({key="0", url='Image.jpg', alt='default alt', id='0'}:Props) => 
+const Card = ({key="0", url='Image.jpg', alt='default alt', id='0', date='00 января 0000 года'}:Props) => 
     <li className="CardWrapper" key={key}>
     <img className="CardImage" src={url} alt={alt}/>
     <div className="CardBody">
         Дата добавления:
         <div className="CardDate">
-            11 октября 2022 года
+            {date}
         </div>
     </div>
     <input name="hiddenBox" className="hiddenBox" type="checkbox" id={"checkBox" + id}/>
