@@ -12,9 +12,9 @@ const Home = () =>{
   useEffect(() => {
     if (fetching){
       document.getElementById("Loader").style.display = 'block'
-      axios.get('https://astral-app-ns.herokuapp.com/api?limit=' + curLimit)
+      axios.get('https://astral-app-ns.herokuapp.com/graphql?query={getSlice(limit%3A' + curLimit + '){id%2Curl%2Calt%2Cdate}}')
       .then(response => {
-        setCards(response.data)
+        setCards(response.data.data.getSlice)
         setCurLimit(curLimit + 3)
       })
       .finally(() => {
