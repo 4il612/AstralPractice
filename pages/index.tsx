@@ -27,7 +27,7 @@ const Home = () =>{
   }, [fetching])
   
   return (
-    <>
+    <div>
         <title>Cards</title>
         <ModalForm/>
         <Sidebar/>
@@ -40,7 +40,7 @@ const Home = () =>{
         </ul>
         <Loader/>
         <LoadButton func={() => {setFetching(true)}}/>     
-    </>
+    </div>
     
   );
 }

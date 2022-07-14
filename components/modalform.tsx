@@ -27,16 +27,16 @@ const ModalForm = () => {
         <ApolloProvider client={clientAAA}>
             <div id="modal" className="modal-form">
                 <form>
-                <div class="field">
-                    <label for="url">Изображение</label>
+                <div className="field">
+                    <label htmlFor="url">Изображение</label>
                     <input value={url} onChange={e => setUrl(e.target.value)} type="text" id="url" />
                 </div>
-                <div class="field">
-                    <label for="alt">Название</label>
+                <div className="field">
+                    <label htmlFor="alt">Название</label>
                     <input value={alt} onChange={e => setAlt(e.target.value)} type="text" id="alt" />
                 </div>
-                <div class="field">
-                    <label for="date">Дата</label>
+                <div className="field">
+                    <label htmlFor="date">Дата</label>
                     <input value={date} onChange={e => setDate(e.target.value)} type="text" id="date" />
                 </div>
                 <button onClick={(e) => addCard(e)} id='formBTN'>ADD</button>

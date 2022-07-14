@@ -1,7 +1,6 @@
 import ModalForm from "./modalform"
 
 const Sidebar = () =>
-    
     <div className="sidebar">
         <div className="sidebar-header">
                 <img src="https://cdn-icons.flaticon.com/png/512/2276/premium/2276931.png?token=exp=1657787162~hmac=a9602c951ec020223b4b1d57f2fac53b" alt="profile_picture"/>
