@@ -3,6 +3,8 @@ import axios from "../node_modules/axios/index"
 import Card from "../components/card"
 import LoadButton from "../components/loadbutton"
 import Loader from "../components/loader"
+import Sidebar from "../components/sidebar"
+import ModalForm from "../components/modalform"
 
 const Home = () =>{
   const [cards, setCards] = useState([])
@@ -27,6 +29,8 @@ const Home = () =>{
   return (
     <>
         <title>Cards</title>
+        <ModalForm/>
+        <Sidebar/>
         <ul className="CardsWrapper">
             { !!cards.length && cards.map(card => {
                 return(

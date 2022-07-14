@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/modalform.ts", "components/modalform.js"  ],
   "exclude": [
     "node_modules"
   ]

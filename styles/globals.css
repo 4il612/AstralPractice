@@ -116,3 +116,60 @@ li{
   text-align: center;
   display: block;
 }
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10%;
+  background: #295e94;
+  transition: all 0.5s ease;
+  color: #FFFFFF;
+  height: 100%;
+}
+
+.sidebar-header{
+  text-align: center;
+}
+
+.sidebar-body{
+  text-align: center;
+}
+
+.sidebar img{
+  width: 100px;
+  height: auto;
+  margin: 0 auto;
+}
+
+a{
+  width: 100%;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#addLabel{
+  width: 20px;
+}
+
+#modal{
+  display: none;
+  margin-left: 11%;
+  margin-top: 1%;
+  width: 260px;
+  position: fixed;
+}
+
+label{
+  float: left;
+}
+
+.field {
+  clear:both; 
+  text-align:right;
+}
+
+#formBTN{
+  margin-top: 4%;
+  margin-left: 40%;
+}
